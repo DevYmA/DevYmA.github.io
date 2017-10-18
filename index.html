@@ -1,9 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Hello</title>
+    <meta charset="UTF-8">
+    
+    <title>I'm Yoshan</title>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//code.jquery.com">
+    
+    <link rel="stylesheet" href="static/css/googleRobotFont.css" type="text/css">
+    <link rel="stylesheet" href="static/scss/sideNavi.css">
+    <link rel="stylesheet" href="static/scss/app.css">
+    
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css">
+    
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.js"></script>
+    
+    <script src="static/js/SideNav.js"></script>
+
+    
 </head>
 <body>
-<h1>Welcome</h1>
+    <section class="km-side-navi" id="exampleSide"></section>
+    <div id="fullpage">
+        <div class="section">
+            <h2>Profile</h2>    
+        </div>
+        <div class="section">
+            <h2>About</h2>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+        </div>
+        <div class="section">
+            <h2>Portfolio</h2>
+        </div>
+    </div>
 </body>
+<script>
+$(document).ready(function() {
+    var options = {
+        menu : ['Profile','About','Skills','Portfolio'],
+        position : 'right',
+        themeColor : '#1ed1dc',
+        id : 'exampleSide',
+        afterInit : function(){
+            var currentIndex = parseInt($('#fullpage').find('.fp-section.active').attr('data-anchor'));
+            sidenav.activeMenuAndTag(currentIndex);
+        }
+    }
+    var sidenav = new SideNavi(options);
+    $('#fullpage').fullpage({
+        sectionsColor: ['#f5f7f9', '#eeefff', '#fff', '#eee'],
+        anchors: ['1', '2', '3', '4', '5'],
+        onLeave: function(index,nextIndex){
+            sidenav.activeMenuAndTag(nextIndex);
+        },
+        afterLoad:function(index){
+            var loadedSection = $(this);
+            switch(index){
+                case 1 : loadedSection.find('h2').addClass('animated fadeInUp');
+                break;
+                case 2 : loadedSection.find('h2').addClass('animated rotateIn');
+                break;
+                case 3 : loadedSection.find('h2').addClass('animated rotateInDownLeft');
+                break;
+                case 4 : loadedSection.find('h2').addClass('animated rotateInUpRight');
+                break;
+            }
+            
+        }
+    });
+});
+</script>
+
 </html>
