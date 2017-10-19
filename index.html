@@ -2,48 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'm Yoshan</title>
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://code.jquery.com">
-    
+
     <link rel="stylesheet" href="static/css/googleRobotFont.css" type="text/css">
     <link rel="stylesheet" href="static/scss/sideNavi.css">
-    <link rel="stylesheet" href="static/scss/app.css">
-    
+    <link rel="stylesheet" href="static/scss/custome.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.css">
-    
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.fullpage/2.8.9/jquery.fullpage.min.js"></script>
-    
-    <script src="static/js/SideNav.js"></script>
 
-    
+    <script src="static/js/SideNav.js"></script>
 </head>
 <body>
     <section class="km-side-navi" id="exampleSide"></section>
     <div id="fullpage">
-        <div class="section">
-            <h2>Profile</h2>    
+
+        <div class="section is-success cover">
+          <div class="hero-body">
+           <div class="container has-text-centered">
+             <h1 id="tel" class="title is-1"><span></span>  </h1>
+           </div>
+          </div>
         </div>
+
         <div class="section">
-            <h2>About</h2>
+          <div class="columns">
+            <div class="column is-5">
+              <img src="./static/images/about_me.png">
+            </div>
+            <div class="column is-7 about-description">
+              <p>
+                As a Full Stack Developer, I've got experience with wide and
+                updated knowledge of modern development technologies.
+                I trust in productivity and efficiency of my sector and you as well.
+                Mainly, I develop both of Front-End and Back-End.To except that I engaged in web services ( JavaRS-RESTfull ).
+                I prefer to design web site which have best user experience(UX Design) and professional structure.
+                Mostly, I'm expert for back-end development with JavaEE(Spring Frame work)
+                I'm also work with SEO, setup and customize of wordpress and penetration testing.
+              </p>
+            </div>
+
+          </div>
         </div>
+
         <div class="section">
-            <h2>Skills</h2>
+          <div class="columns">
+            <div class="column is-7 skill-content">
+              <div class="tags skill-tag">
+                <span class="tag">Java SE</span>
+                <span class="tag">Java EE</span>
+                <span class="tag">Python</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">JQuery</span>
+                <span class="tag">Angular 4</span>
+                <span class="tag">Responsive Design</span>
+                <span class="tag">UX</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Spring MVC</span>
+                <span class="tag">Spring Colud</span>
+                <span class="tag">Hibernate</span>
+                <span class="tag">MySQl</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Wordpress</span>
+                <span class="tag">SEO</span>
+                <span class="tag">RESTfull Web Services</span>
+              </div>
+            </div>
+            <div class="column is-5">
+              <img src="./static/images/skills.png">
+            </div>
+          </div>
         </div>
         <div class="section">
             <h2>Portfolio</h2>
+
         </div>
     </div>
+
 </body>
 <script>
 $(document).ready(function() {
     var options = {
-        menu : ['Profile','About','Skills','Portfolio'],
+        menu : ['Profile','About','Skills'],
         position : 'right',
         themeColor : '#1ed1dc',
         id : 'exampleSide',
@@ -54,27 +109,14 @@ $(document).ready(function() {
     }
     var sidenav = new SideNavi(options);
     $('#fullpage').fullpage({
-        sectionsColor: ['#f5f7f9', '#eeefff', '#fff', '#eee'],
-        anchors: ['1', '2', '3', '4', '5'],
+        sectionsColor: ['#2979ff', '#e6e6e6', '#e0e0e0'],
+        anchors: ['1', '2', '3'],
         onLeave: function(index,nextIndex){
             sidenav.activeMenuAndTag(nextIndex);
-        },
-        afterLoad:function(index){
-            var loadedSection = $(this);
-            switch(index){
-                case 1 : loadedSection.find('h2').addClass('animated fadeInUp');
-                break;
-                case 2 : loadedSection.find('h2').addClass('animated rotateIn');
-                break;
-                case 3 : loadedSection.find('h2').addClass('animated rotateInDownLeft');
-                break;
-                case 4 : loadedSection.find('h2').addClass('animated rotateInUpRight');
-                break;
-            }
-            
         }
     });
 });
 </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.6/typed.min.js" type="text/javascript" ></script>
+<script src="static/js/custome.js"></script>
 </html>
