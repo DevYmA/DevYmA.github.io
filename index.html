@@ -89,34 +89,16 @@
           </div>
         </div>
         <div class="section">
-            <h2>Portfolio</h2>
+            <div class="columns">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1">Comming Soon</h1>
+                </div>
+            </div>
 
         </div>
     </div>
 
 </body>
-<script>
-$(document).ready(function() {
-    var options = {
-        menu : ['Profile','About','Skills'],
-        position : 'right',
-        themeColor : '#1ed1dc',
-        id : 'exampleSide',
-        afterInit : function(){
-            var currentIndex = parseInt($('#fullpage').find('.fp-section.active').attr('data-anchor'));
-            sidenav.activeMenuAndTag(currentIndex);
-        }
-    }
-    var sidenav = new SideNavi(options);
-    $('#fullpage').fullpage({
-        sectionsColor: ['#2979ff', '#e6e6e6', '#e0e0e0'],
-        anchors: ['1', '2', '3'],
-        onLeave: function(index,nextIndex){
-            sidenav.activeMenuAndTag(nextIndex);
-        }
-    });
-});
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.6/typed.min.js" type="text/javascript" ></script>
 <script src="static/js/custome.js"></script>
 </html>
